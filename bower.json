@@ -1,0 +1,38 @@
+{
+  "name": "youtv",
+  "version": "0.0.1",
+  "homepage": "https://github.com/diRex/youtv",
+  "authors": [
+    "Diogo Vecchiati <diogo.vecchiati@gmail.com>"
+  ],
+  "description": "A lab made with LESS, JS and YouTube API, simulating a tv with youtube chanels",
+  "main": "index.html",
+  "keywords": [
+    "diogo",
+    "vecchiati",
+    "diogo",
+    "vecchiati",
+    "beato",
+    "direx",
+    "javascript",
+    "js",
+    "html5",
+    "css",
+    "less",
+    "tv",
+    "youtube",
+    "divecch"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "less": "~1.6.1"
+  }
+}

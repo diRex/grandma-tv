@@ -1,0 +1,22 @@
+{
+  "name": "youtv",
+  "version": "0.0.1",
+  "description": "server to run youtv",
+  "main": "run.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diRex/youtv.git"
+  },
+  "author": "Diogo Vecchiati http://divecch.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diRex/youtv/issues"
+  },
+  "homepage": "https://github.com/diRex/youtv",
+  "dependencies": {
+    "express": "~3.4.8"
+  }
+}
