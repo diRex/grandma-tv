@@ -1,4 +1,3 @@
-youtv
+Grandma TV
 =====
-
-A lab made with LESS, JS and YouTube API, simulating a tv with youtube chanels
+Old TV made with CSS3(no image) + html5 + js
