@@ -7,7 +7,7 @@
 @glass: rgba(255, 255, 255, 0.7);
 @gray:  rgb(141, 141, 141);
 
-.border-radius(@radius) {
+.border-radius(@radius: 4px) {
 	-webkit-border-radius: @radius;
 	   -moz-border-radius: @radius;
 		 -o-border-radius: @radius;
@@ -31,7 +31,11 @@
 }
 
 .box-background() {
-	background: linear-gradient(35deg, #d3cdcd 40%, #757575 55%), linear-gradient(147deg, #757575 45%, #d3cdcd 55%) 100% 0%, linear-gradient(35deg, #757575 45%, #d3cdcd 55%) 100% 100%, linear-gradient(147deg, #d3cdcd 45%, #757575 55%) 0% 100%;
+	background: 
+		linear-gradient(35deg, #d3cdcd 40%, #757575 55%), 
+		linear-gradient(147deg, #757575 45%, #d3cdcd 55%) 100% 0%, 
+		linear-gradient(35deg, #757575 45%, #d3cdcd 55%) 100% 100%, 
+		linear-gradient(147deg, #d3cdcd 45%, #757575 55%) 0% 100%;	
 	background-repeat: no-repeat;
 	background-size: 50% 50%;
 }
@@ -47,10 +51,25 @@
 	display: block;
 }
 
-.wood-background() {
+.wood-texture() {
 	background: @brown;
 	background-image: linear-gradient(-175deg, @light-brown 5px, @middle-brown 1px);
 	background-size: 10px 10px;
+}
+
+.metal-texture() {
+	background: #CCC linear-gradient(45deg, #d3cdcd 45%, #757575 60%);
+	background-size: 2px 2px;
+}
+
+.button-size(@size) {
+	width: @size;
+	height: @size;
+}
+
+.bevel-light(){
+	border-top: 1px solid rgba(255, 255, 255, 0.56);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.56);
 }
 
 #tv {
@@ -59,7 +78,8 @@
 	position: relative;
 	padding: 15px;
 	.tv-block();
-	.wood-background();
+	.bevel-light;
+	.wood-texture();
 	.border-radius(20px);
 
 	#panel {
@@ -82,20 +102,37 @@
 			float: left;
 			background: #CCC;
 			padding: 15px 30px;
-			border-top: 1px solid rgba(255, 255, 255, 0.56);
-			border-bottom: 1px solid rgba(255, 255, 255, 0.56);
+			.bevel-light();
 			.box-background();
+			.border-radius();
+		
+
+			#screen {
+
+				border: 2px solid #000;
+				position: relative;
+				width: 300px;
+				height: 250px;
+				.screen-shape();
+				.screen-shadow();
+				.screen-background();
+			}
 		}
 
-		#screen {
+		#buttons {
+			float: right;
+			width: 110px;
+			height: 286px;
+			display: block;
+			padding: 10px;
+			.metal-texture();
+			.border-radius();
+			.bevel-light();
+			box-sizing:border-box;
 
-			border: 2px solid #000;
-			position: relative;
-			width: 300px;
-			height: 250px;
-			.screen-shape();
-			.screen-shadow();
-			.screen-background();
+			#channels {
+				
+			}
 		}
 	}
 }
