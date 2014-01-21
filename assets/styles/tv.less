@@ -7,6 +7,10 @@
 @glass: rgba(255, 255, 255, 0.7);
 @gray:  rgb(141, 141, 141);
 
+body {
+	background: radial-gradient(rgba(255, 255, 255, 0)55%, rgb(153, 153, 153));
+}
+
 .border-radius(@radius: 4px) {
 	-webkit-border-radius: @radius;
 	   -moz-border-radius: @radius;
@@ -63,9 +67,12 @@
 	background-size: 2px 2px;
 }
 
-.button-size(@size) {
+.button-shape(@size) {
 	width: @size;
 	height: @size;
+	display: block;
+	border-radius: 50%;
+	margin: 0 auto;
 }
 
 .bevel-light(){
@@ -82,7 +89,11 @@
 	.bevel-light;
 	.wood-texture();
 	.border-radius(20px);
-
+	-webkit-box-reflect: below 2px 
+	    -webkit-gradient(linear, left top, left bottom, 
+	    	from(transparent), 
+	    	color-stop(50%, transparent), 
+	    	to(rgba(255,255,255,0.2)));
 	#panel {
 		
 		&:after {
@@ -132,7 +143,15 @@
 			box-sizing:border-box;
 
 			#channels {
-				
+				&:after {
+					content: " ";
+					.button-shape(60px);
+					
+				}
+				background: #272727;
+				.button-shape(80px);
+				box-shadow: inset 0px 2px 10px #000;
+				border-bottom: 2px solid rgba(255, 255, 255, 0.85);
 			}
 		}
 	}

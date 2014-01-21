@@ -1,3 +1,6 @@
+body {
+  background: radial-gradient(rgba(255, 255, 255, 0) 55%, #999999);
+}
 #content {
   width: 100%;
   display: block;
@@ -19,6 +22,7 @@
   -moz-border-radius: 20px;
   -o-border-radius: 20px;
   border-radius: 20px;
+  -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.2)));
 }
 #tv #panel {
   box-sizing: border-box;
@@ -76,4 +80,22 @@
   border-top: 1px solid rgba(255, 255, 255, 0.56);
   border-bottom: 1px solid rgba(255, 255, 255, 0.56);
   box-sizing: border-box;
+}
+#tv #panel #buttons #channels {
+  background: #272727;
+  width: 80px;
+  height: 80px;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: inset 0px 2px 10px #000;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+}
+#tv #panel #buttons #channels:after {
+  content: " ";
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
 }
