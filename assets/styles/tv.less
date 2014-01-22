@@ -32,7 +32,8 @@ body {
 
 .screen-background() {
 	background: @green-screen;
-	background-image:linear-gradient(45deg, transparent 1px, @glass 60%, @gray 300% );
+	background-image:
+	linear-gradient(45deg, transparent 1px, @glass 60%, @gray 300% );
 }
 
 .box-background() {
@@ -90,77 +91,113 @@ body {
 	.bevel-light;
 	.wood-texture();
 	.border-radius(20px);
-	-webkit-box-reflect: below 2px 
+	-webkit-box-reflect: below 1px 
 	    -webkit-gradient(linear, left top, left bottom, 
 	    	from(transparent), 
 	    	color-stop(50%, transparent), 
 	    	to(rgba(255,255,255,0.2)));
-	#panel {
+}
+
+#panel {
 		
-		&:after {
-			content: " ";
-			display: block;
-			clear: both;
-			height: 1px;
-			background: #ccc;
-		
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+		height: 0px;
+		background: #ccc;
+	}
 
-		}
+	box-sizing: border-box;
+	border-radius: 6px;
+	border: 1px solid #000;
+	background: #181818;
+	box-shadow: inset 0px 0px 5px #000;
+	padding: 8px;
+}
 
-		box-sizing: border-box;
-		border-radius: 6px;
-		border: 1px solid #000;
-		background: #181818;
-		box-shadow: inset 0px 0px 5px #000;
-		padding: 8px;
-		
-		#screen-box {
-			float: left;
-			background: #CCC;
-			padding: 15px 30px;
-			.bevel-light();
-			.box-background();
-			.border-radius();
-		
+#screen-box {
+	float: left;
+	background: #CCC;
+	padding: 15px 30px;
+	.bevel-light();
+	.box-background();
+	.border-radius();
 
-			#screen {
 
-				border: 2px solid #000;
-				position: relative;
-				width: 300px;
-				height: 250px;
-				.screen-shape();
-				.screen-shadow();
-				.screen-background();
-			}
-		}
+	#screen {
 
-		#buttons {
-			float: right;
-			width: 110px;
-			height: 286px;
-			display: block;
-			padding: 10px;
-			.metal-texture();
-			.border-radius();
-			.bevel-light();
-			box-sizing:border-box;
-
-			#channels {
-				.button {
-					.button-shape(60px);
-					position: relative;
-					top: 10px;
-					box-shadow: 0px 10px 24px #000;
-					border-top: 2px solid #F1F1F1;
-					background: #ccc;
-				}
-				background: #272727;
-				.button-shape(80px);
-				box-shadow: inset 0px 2px 10px #000;
-				border-bottom: 2px solid rgba(255, 255, 255, 0.85);
-			}
-		}
+		border: 2px solid #000;
+		position: relative;
+		width: 300px;
+		height: 250px;
+		.screen-shape();
+		.screen-shadow();
+		.screen-background();
 	}
 }
 
+#buttons {
+	float: right;
+	width: 110px;
+	height: 286px;
+	display: block;
+	padding: 10px;
+	.metal-texture();
+	.border-radius();
+	.bevel-light();
+	box-sizing:border-box;
+}
+
+#channels {
+	.button {
+		&:before {
+			.button-shape(50px);
+			position: relative;
+			top: 3px;
+			box-shadow: 0px 10px 24px #000;
+			border-top: 2px solid #F1F1F1;
+			background: #ccc;
+			content: " ";
+		};
+		&:after {
+			.button-shape(5px);
+			background: #181818;
+			content: " ";
+			border-bottom: 1px solid #FFF;
+			position: absolute;
+			top: 25px;
+			left: 8px;
+		};
+
+		.button-shape(60px);
+		position: relative;
+		top: 10px;
+		background: #BBB;
+	}
+	background: #272727;
+	.button-shape(80px);
+	box-shadow: inset 0px 2px 10px #000;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+#led {
+	.button-shape(15px);
+	background: radial-gradient(#C03333 20%, #702424 );
+	border-bottom: 1px solid #FFF;
+	box-shadow: inset 0px 2px 6px #000;
+	position: absolute;
+	bottom: 30px;
+}
+
+#shadow {
+	border-radius: 50%;
+	background: rgba(34, 17, 9, 0.83);
+	display: block;
+	height: 2px;
+	width: 490px;
+	margin: 0 auto;
+	box-shadow: 0px 1px 4px #000;
+	position: relative;
+	top: -3px;
+}
